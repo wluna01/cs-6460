@@ -11,7 +11,6 @@
 
 \RequirePackage{etoolbox} % Required for conditional logic
 
-
 %%
 % Page layout
 \ifstrequal{\papersize}{a4paper}{ % A4 paper page geometry settings
@@ -40,8 +39,8 @@
 
 \RequirePackage{hyperref} % Required for including links
 \RequirePackage{changepage}
-
-
+\RequirePackage{float} % allows for exact figure placement
+\RequirePackage{listings}
 %%
 % Font stuff
 
@@ -96,7 +95,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{8.5pt}
 
-
 %%
 % Title
 \RequirePackage{titlesec}
@@ -119,7 +117,6 @@
 	}
 }
 
-
 %%
 % Abstract
 \renewenvironment{abstract}{%
@@ -133,7 +130,6 @@
 		\vspace{-11pt}
 	\end{center}
 }
-
 
 %%
 % Headings
@@ -182,13 +178,11 @@
 \DeclareCaptionLabelSeparator{emdash}{\hairsp—\hairsp} % Custom caption label separator
 \captionsetup{labelsep=emdash} % Change the default colon between number and label to use the custom separator
 
-
 %%
 % Lists
 \RequirePackage{enumitem} % Required for list customisation
 \setlist{leftmargin=*, noitemsep, nolistsep} % No left margin and space around/within lists
 \setlist[itemize]{label={\tiny\textsuperscript{\textbullet}}}
-
 
 %%
 % Image stuff
@@ -205,7 +199,6 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 
-
 %%
 % Tables
 
@@ -220,7 +213,6 @@
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % Define a new centred column type
 \setlength\lightrulewidth{0.03em}
 
-
 %%
 % Footnotes
 \RequirePackage[bottom]{footmisc} % Make footnotes flush w/ the bottom of the page
@@ -234,11 +226,10 @@
 	}
 }
 
-
 %%
 % References
 \RequirePackage[
-	bibstyle=authoryear,
+	bibstyle=apa,
 	dashed=false,
 	sorting=nyt,
 	natbib=true,
@@ -269,7 +260,6 @@
 % Inline citations
 \renewcommand{\cite}[1]{\citeauthor{#1}, \citeyear{#1}}
 \renewcommand{\citep}[1]{(\citeauthor{#1}, \citeyear{#1})}
-
 
 %%
 % Metadata
