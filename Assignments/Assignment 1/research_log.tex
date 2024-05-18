@@ -15,28 +15,186 @@
 \section{Background}
 %In about half a page, summarize your current state. For this Research Log, this is likely a summary of your prior interests. If you already know what you are interested in doing, you’d write about that; if you don’t, you’d write about your more general interests in Educational Technology.
 
+I'm starting the term with a clear idea of what want to make, but with a cursory understanding of the research that surrounds it.
 
+As an avid language learner, I've noticed that most products–from consumer app to community college course–are focused on active learning. I've often felt a lack of attractive options for passive learning, such as watching TV or reading a book, makes it difficult to take study during parts of the day when most people have lower motivation. Of course, most languages have no shortage of media to engage with. However, most of this media is either geared at native speakers, making it effortful to comprehend as a student, or "graded content" that is helpful but difficult to acquire in sufficient volume for the student's current level.
+
+An additional wrinkle is that students of a foreign language have higher variability in their background and proficiency than native speakers. If a touring musician has near-native English vocabulary to describe music but has never used the language to talk about computers, they need a very different IT lesson than someone who works in the tech industry.
+
+These are two challenges I have observed in teaching and learning Spanish, Portuguese, and Mandarin Chinese. They lead me to wonder: can a Large Language Model be leveraged to generate easily comprehensible input, trained on each individual's vocabulary, to create content that makes passive learning of a foreign language more attractive?
 
 \section{Papers}
-%As you walk through the Research Guide, you’ll be finding lots of papers to read. Here, you’ll make a list of the papers you come across and give considerable attention to. We would expect the Research Log to include at least 15-20 sources (though more is fine as well), and at least 12 (preferably more) should be academic and peer-reviewed. You may include blog posts, newspaper articles, etc. as well, but you should have at least 12 academic sources, too. In the list, for each source, you’ll provide:
-%The paper’s bibliographic information (its APA citation, typically)
-%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
-%In around three sentences, a brief, original summary in your own words
-%In around three sentences, the main takeaways going forward
+%As you walk through the Research Guide, you’ll be finding lots of papers to read. Here, you’ll make a list of the papers you come across and give considerable attention to. We would expect the Research Log to include at least 15-20 sources (though more is fine as well), and at least 12 (preferably more) should be academic and peer-reviewed. You may include blog posts, newspaper articles, etc. as well, but you should have at least 12 academic sources, too.
 
+\subsection{\fullcite{hu_2000}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+This paper was part of the curriculum for the course \textit{Linguistic Approaches to Second Language Acquisition} that I took in undergrad.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+This paper provides evidence that a reader has to know ninety-eight percent of the words in a text to be able to both comprehend its meaning and acquire new vocabulary (the remaining two percent) passively through context, without referring to any external tool such as a dictionary. The literature review provides different mental models of vocabulary acquisition. Of note is the observation that native speakers of a language generally learn to read with texts that only contain words they already know, compared to adult learners of a foreign language who will generally begin reading before establishing a high vocabulary. It also points out that the frequency of uncommon words is generally higher in English non-fiction than fiction, making fiction a better medium for learners with limited vocabulary. The study then seeks to empirically determine the "sweet spot" of unknown words in a text, where enough unknown words are present to create opportunity for passive acquisition of vocabulary, without so many unknown words as to overwhelm or exhaust the reader. The paper concludes that ninety-eight percent of the words in a text should be known to achieve this sweet spot.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+The key takeaway is that any system that seeks to generate text to optimize passive vocabulary acquisition should strive for ninety-eight percent comprehension. It also suggests that it is easier to generating fiction that achieves this threshold than non-fiction. It also confirms one unspoken assumption of the study, which is that vocabulary comprehension strongly correlates to overall comprehension of a text. The conclusion posits that there are three types of reading for language acquisition, Intensive reading, extensive reading for language growth (target 98 percent words known), and extensive reading for developing fluency (target all words known).
+%
+\subsection{\fullcite{nation1992vocabulary}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+I found this paper in the literature review from \cite{hu_2000} and it felt relevant to explore more deeply.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+This paper attempts to answer the question of if knowing 2,000 words is sufficient to enable reading young adult fiction for pleasure? Assuming the learner knows all 2,000 of the most common English words (as defined by West 1953), and the target 98 percent known words established by the paper above, the answer is no. It would take 5,000 words to reach sufficient coverage in most of the texts analyzed. The study then offers that the text can either be simplified to achieve this coverage, or the necessary vocabulary can actively studied before or during the reading process. Simplification is proposed at 2,500, 5,000 and 7,000 grades, and simplification rules are presumably enabled via the Oxford Concordance Programme.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This study affirms that even young adult fiction requires too high a level of vocabulary for most second language learners. Thankfully, it provides evidence that these texts can be simplified to a level where a student who knows 2,500 words will have ninety-eight percent vocabulary coverage. It also begs the question of what the current standards are for programmatically simplifying texts.
+%
+\subsection{\fullcite{stajner-2021-automatic}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+The paper above made me eager to understand the current state of automatic text simplification, so I asked Chat GPT to generate a list of recent papers surveying the topic. This one seemed the most relevant.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+Presents a six stage benchmark of adult literacy from the OECD, where the majority of native speakers never achieve the higher levels of reading comprehension described in the benchmark, pointing out that simplification is most useful for native speakers at the conceptual level, not syntactical or lexical. It discusses the roots of the field being driven by accessibility issues and early systems emphasizing rules-based approaches. It also points out two evolutions in the approaches to simplification, towards supervised machine learning around 2010, and again towards neural networks around 2015. Article points out that most simplification occurs at a sentence level, which can be misaligned with the common goal of simplifying an entire document or book under the same constraints. The author is bearish on the automatic evaluation of text simplification programs, but highlights SARI, SAMSA, and MT-based frameworks as the most promising.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This article implies that modern system of automatic text simplification probably uses neural networks in some way. It also forced me to think about whether or not the scope of this project should include an evaluation framework, and if so, some of the challenges in choosing one. I had not previously considered using the project as a tool for learners with intellectual disabilities, but I now realize that may be an additional valid use case.
+
+\subsection{\fullcite{xu-etal-2016-optimizing}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+This paper was cited by the paper above. I was eager to understand current approaches to evaluation frameworks.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper points out current limitations of machine-learning driven approaches to text simplification, noting problems in training data (notably the under-discussed limitations of simple English Wikipedia) and evaluation frameworks (notably their fragmentation across niche sub-disciplines). The paper emphasizes that an evaluation criteria is crucial since it serves as the objective function any machine learning algorithm should optimize. It then proposes SARI, \textbf{s}ystem output \textbf{a}gainst \textbf{r}eferences and against the \textbf{i}nput sentence. The paper uses both humans and SARI to evaluate its model's output, highlighting the moderate correlation between the two as evidence that evaluation can be automated. There is also a discussion of how SARI maps onto human evaluations of simplicity more effectively than BLEU, a framework designed for evaluating simplicity of translated texts.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+Biggest takeaway is actually the meta-observation on using quantitative human-generated data to prove the efficacy of some proposed computer-generated alternative. It is unlikely that I my project will allow for such scope, but is a fantastic idea. I also realize that evaluation frameworks for simplifying a text into the same target language (ie monolingual text simplification) may not be a well-studied field with consensus on the best tools to assess model accuracy. In the event that an LLM is insufficient at simplifying text, or generating new text at a sufficiently simple level, I may leverage the algorithm provided in this paper.
+%
+\subsection{\fullcite{sulem-etal-2018-semantic}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+This paper was also cited in (\cite{stajner-2021-automatic}).)
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+This paper proposes a novel framework for evaluating text simplification, referred to as SAMSA (\textbf{S}implification \textbf{A}uto-
+matic evaluation \textbf{M}easure through \textbf{S}emantic \textbf{A}n-
+notation). It continues with a review of the most commonly cited competing frameworks in the field, discussing the limitations of each. It explains the benefits of SAMSA, notably that it priotizes breaking complex sentences down into a higher quantity of more easily digestible sentences, ie "I read the book that John wrote" -> "John wrote a book. I read that book." The paper provides human input to validate that SAMSA's score strongly correlates to how humans rate text simplicity.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This paper caused me to reconsider the goal of my project. The lack of consensus on evaluation frameworks for text simplification–not to mention the fact that an LLM may be able to provide a black box evaluation, of which there is very little research–makes a case for focusing on research into these benchmarks rather than a web application that has little concern for empirical assessment of its output.
+
+%
+\subsection{\fullcite{zhang2017sentence}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+Found this paper by Googling "Deep Learning Approaches to Sentence Simplification."
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper proposes DRESS (\textbf{D}eep \textbf{Re}inforcement \textbf{S}entence \textbf{S}implification) that uses a decoder-encoder pattern in recurrent neural networks to simplify sentences. It uses SARI (\cite{xu-etal-2016-optimizing}) as the objective function but notes some of SARI's limitations. It runs DRESS and other models on three datasets, and evaluates them with multiple frameworks and dimensions. It concludes deeming DRESS a success, although there are many caveats from the high dimensionality of their evaluation.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This paper provides strong evidence that neural networks are probably the most effective means of non-human sentence simplification available in 2024. Although whether an specialized LLM can outperform, much less compete on par with, a purpose-built neural network is impossible to conclude from this article alone.
+
+\subsection{\fullcite{feng2023sentence}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+I asked ChatGPT to provide a list of papers, if any, that have recently compared LLM performance at sentence simplification against bespoke solutions like DRESS. 
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+This paper argues that LLMs are more effective than existing method of sentence simplification. It discusses differences in performance between zero- and few-shot prompting, across English, Spanish, and Portuguese. The study uses both automated metrics and those provided by three non-native English speakers to assess the efficacy of the LLM's output.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This paper makes me feel more confident about building a project around the assumption that an LLM is a competent agent to outsource the process of sentence simplification. The article leaves plenty of follow-up questions, however, such as how the LLM's context window enables it to establish continuity in a story it continually generates, or how it might attune simplification to the vocabulary of a specific individual.
+
+\subsection{\fullcite{kew2023bless}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+This was the other paper shortlisted by ChatGPT that examines the performance of an LLM at sentence simplification.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper is a more robust expansion of the one above, examining the performance of forty-four LLMs on three data sets of complex-simple sentence pairs. It distinguishes between open- and closed-weight (rather than -source) models and uses three prompts of varying verbosity. Using SARI and BERT as automated evaluation frameworks, the results found that more verbose instructions achieved higher-scoring output, and that OpenAI's (at the time) state-of-the-art GPT-3.5-Turbo outperformed all other LLMs by a significant margin. Although the paper also finds that humans are able to outperform all LLMs by a significant margin.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This paper provides further evidence that LLMs are the best automated method of simplifying text, but also found that humans are still–at least at the time of writing–significantly better. Given that, to my knowledge, all graded readers are produced by humans, this begs the question as to whether LLMs are yet good enough at sentence simplification to replace the rote process of human participation.
+
+\subsection{\fullcite{wu2024indepth}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+I asked ChatGPT to provide more recent papers, if available, comparing human to LLM performance.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper examines the performance of GPT 4 on sentence simplification. It introduces a novel approach to leverage humans to evaluate output, prompting humans to specifically call out errors in the hope of reducing variability and subjectivity of evaluation across different graders. Analysis of the human grading proved a low variability, with human grading corroborating automated grading that GPT 4 is the highest performing LLM to date. The paper calls out the model's weakness at lexical paraphrasing.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This paper, despite dedicating a lot of discussion to optimizing humans as \textit{evaluators} of LLM output, doesn't make a conclusion on how well humans \textit{produce} sentencen simplifications compared to GPT-4. I've also noticed that most of the papers highlighted here so far rely on frighteningly few text corpora, notably Wiki{simple | large} and Newsela. This has me concerned that too many conclusions have been drawn from models all built on the same data. This may be the most thorough paper of the bunch so far.
+
+\subsection{\fullcite{Murre2015ReplicationAA}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+I googled the best paper to cite in providing empirical evidence for spaced repetition.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+This study replicates the famous "forgetting curve" popularized by Ebbinghaus in the 1880's and upon which spaced repetition is based. While the paper expands upon a phenomena at the twenty-four mark that does not fit the curve, they conclude that memory does follow a pseudo-logarithm (with refinement over the years) close to what Ebbinghaus initially proposed.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+Given that I had never read a paper on spaced repetition, I wanted to validate that it wasn't pop science but a genuine phenomenon that can be replicated in a research setting. This paper not only proves that, but also provides an equation that can easily be integrated into a computer program to keep track of when to best present recently acquired vocabulary.
+
+\subsection{\fullcite{}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
 
 
 \section{Synthesis}
 %In about a page, summarize the overall body of work you’ve put together. What are the high-level trends, large takeaways, or open questions you’ve found? If you’ve narrowed in on a particular domain, summarize that domain; if you’re still exploring, discuss the overall direction these efforts are leading you toward. Most importantly, anchor this synthesis in the papers you provided above, citing them where appropriate.
 
 
-
 \section{Reflection}
 %In about half a page, reflect on the process of finding sources, reading papers, synthesizing their contents, and building your understand. What was difficult, and what was easy? What are you finding yourself interested in going forward?
-
+It's very hard to summarize papers that introduce entirely new frameworks, especially when they rely on math.
     
 \section{Planning}
 %In about half a page, provide a plan for what you expect to do next week. What threads or ideas will you pursue? What questions will you seek answers to in the literature?
+
+Interested in observation that HSK 6 requires 2,500 vocabulary words, which maps onto the minimum deemed necessary for reading simplified texts. Am also missing confirmation on the 2,500 number, but it's intuitive that there would be some floor of vocabulary at which point it's impossible to reduce meaning further without losing critical context, ie telescope can be replaced with 'glass attached to pipe' but that's more confusing than clarifying.
+
 
 \printbibliography{}
 
