@@ -275,12 +275,53 @@ Asked Chat-GPT for resources on whether looking up new words during extensive re
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-
+The papers introduces definitions of active vs passive learning, which I found more intuitive to re-label effortful vs effortless learning. To analogize vocabulary acquisition, I interpret active to be attempting to glean the definition of a word solely from context, and passive to have access to a dictionary for looking up new words. The study found that the most successful learners of certain boundary discrimination tasks were "passive-first", meaning that they were given examples initially but expected to form their own definitions later on.
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-I read this paper to gather intuition for whether providing a dictionary for the words in the app is essential, optional, or even detrimenal to learning outcomes.
+I read this paper to gather intuition for whether providing a dictionary for the words in the app is essential, optional, or even detrimental to learning outcomes. The safest conclusion is no conclusion at all–that the outcome of the tasks in the experiment are highly context-dependent and can't be assumed to transfer to language acquisition. The farther-reaching conclusion is that students should have access to a dictionary to look up the definition of a new word at initial exposures, potentially discouraging subsequent look-ups as they entrench the word into long-term memory.
 
+\subsection{\fullcite{SuperMemo_Method_2023}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+Read the GitHub page for Anki software to discover it's based on Wozniak's Supermemo, wanted to understand its principles.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+Introduces an elaboration on Ebbinghaus' Forgetting Curve, where a learner must self-select if a piece of content, is known, almost known, or forgotten. This selection dictates how long the system will wait until the next presentation of that content for recall. It notes the fact that Ebbinghaus' study tested memorization of useless information, making its relevance to real-world memory tasks suspect. It then describes Piotr Wozniak's Master's Thesis where he recreated a more robust, relevant version of the forgetting curve that would inform how Anki's spaced repetition works.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+It had not dawned on me that Anki requires the user to self-select how well they remembered something. This begs the question that if an extensive reading system over-represents vocabulary that has been looked up by the reader, implying it was forgotten, there's ambiguity in whether that lookup maps onto a complete forgetting or a "lesser" forgetting. Or if the UI needs to prompt the user to make that distinction.
+
+\subsection{\fullcite{essay89410}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+Super Memo article mentions Leitner as seminal contributor to spaced repetition, wanted to understand how (if at all) the method had been challenged in recent years.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper attempts to model the memory state of a learner with a Markov Model. It presents interesting results from running a simulation of the model in Python, such as the estimation that 3.8 out of every five words studied will be mastered by the end of a two month period. The paper suggests changes to the Leitner system, such as adding an extra step in the progression from introduction to mastery, and intentional staggering of presentation of words to have fewer spikes in study time on certain days. The paper notes the need for validation via testing actual students.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+This 2022 paper implies that there is still ample room to optimize the spaced repetition algorithms underneath systems like Anki, regardless of whether the suggestions proposed in this specific paper are the most fruitful. It also highlights the complexity of maintaining the states of all the different words being studied, making an argument for leaning towards an API or other service that can abstract this logic away from the project.
+
+\subsection{\fullcite{shortestpathrepetitionscheduling}}
+%The paper’s bibliographic information (its APA citation, typically)
+\subsubsection{Identification}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+Reading the GitHub commit notes for Anki revealed that the newest version of their scheduling algorithm is based on this paper.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+The paper highlights that many popular systems (including, at the time, Anki) continue to use rules-based approaches to spaced repetition, which at best have not been revisited in decades, and at worst generate inefficiencies in study time. Leveraging a dataset from MaiMemo, they generate the Difficulty-Halflife-P(recall) model, highlighting the weaknesses of a similar dataset provided by Duolingo. With this model simulating the memory of a learner, a stochastic shortest path algorithm is introduced to optimize the intervals between recall of the same content. Based on automated benchmarks (not human trials), it claims a 12.5 percent decrease in time to mastery over the (then current) Anki approach.
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+Not only is this further evidence that spaced repetition remains an evolving field, but it highlights the need for studies that replicate the findings of these optimization algorithms with human trials. The 12.5 percent improvement is impressive but no so great a decrease in memorization time to lose sleep over. It will be more important to use a service that abstracts handling of presentation intervals than use the most optimal methodology.
 
 \section{Synthesis}
 %In about a page, summarize the overall body of work you’ve put together. What are the high-level trends, large takeaways, or open questions you’ve found? If you’ve narrowed in on a particular domain, summarize that domain; if you’re still exploring, discuss the overall direction these efforts are leading you toward. Most importantly, anchor this synthesis in the papers you provided above, citing them where appropriate.
