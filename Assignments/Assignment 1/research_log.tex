@@ -325,22 +325,42 @@ Not only is this further evidence that spaced repetition remains an evolving fie
 
 \section{Synthesis}
 %In about a page, summarize the overall body of work you’ve put together. What are the high-level trends, large takeaways, or open questions you’ve found? If you’ve narrowed in on a particular domain, summarize that domain; if you’re still exploring, discuss the overall direction these efforts are leading you toward. Most importantly, anchor this synthesis in the papers you provided above, citing them where appropriate.
-1. sentence simplification and complication
-2. introduction of new words at based on spaced repetition principle
-3. use of TTS to generate audio to assisting silent reading
 
-technology enabling
-a. natural sounding, on-demand TTS to
-b. keeping track of timing and selection of difficult words to modify text to present them according to spaced repetition
-c. simplifying and complicating sentences with LLMs
+It's easiest to divide the above resources into a four distinct lines of inquiry:
+
+\begin{enumerate}
+    \item \textbf{Sentence Simplification.} How have approaches to sentence simplification changed over the years? What is the current state-of-the-art approach?
+    \item \textbf{Extensive Reading.} Can we formally define Extensive Reading as a part of foreign language acquisition, if so, what is that definition, and is ER considered effective?
+    \item \textbf{Spaced Repetition.} Is spaced repetition grounded in empirical evidence is there consensus on how to best implement it? If not, what are competing theories?
+    \item \textbf{Miscellaneous.} A few miscellaneous papers on the role of audio-assisted reading (\cite{Chang2015ImprovingRR}), social media (\cite{Liu2015AnAO}), and consumer apps in language learning (\cite{karasimos2022battle}).
+\end{enumerate}
+
+\subsection{Trends}
+
+For one, it's clear that \textbf{Sentence Simplification} has followed the same arc as most other NLP tasks in the last ten years. The field emerged decades ago, originating with rules-based approaches, for neural networks to become in vogue in the mid 2010's (\cite{xu-etal-2016-optimizing}, \cite{stajner-2021-automatic}, \cite{zhang2017sentence}), only for general purpose LLMs to become the best-in-class option in the last two years or so (\cite{feng2023sentence}). The papers also underscore the challenging in evaluating the output of a such a model, with frameworks like SAMSA (\cite{sulem-etal-2018-semantic}) and SARI being widely used (\cite{kew2023bless}) despite no consensus they can compete with human evaluators (\cite{wu2024indepth}). The take away from this observation is reassuring, since I was originally daunted by the potential need to implement my own solution to sentence simplification. These papers make leveraging the OpenAI API seem promising. This would allow for a lot more flexibility in the scope of the project.
+
+Another observation is that \textbf{Extensive Reading} remains an accepted part of the language learning process. While the origin of the technique stems from Krashen's work (\cite{krashen_2004}), the growing skepticism over some of his hypotheses (\cite{krashenreview}) have been assuaged by empirical research that proved vocabulary acquisition is possible through extensive reading. The research explored here mostly supports ER being used in conjunction with more active learning techniques (\cite{mcdonald2016}). There's also empirical evidence that ninety-eight percent of the words in a text should be understood by the reader in order to enable passive acquisition of unknown vocabulary (\cite{hu_2000}) (\cite{nation1992vocabulary}). Other papers explore how audio narration of the written content can improve learning outcomes as well. There are also limitations in the availability of graded readers that enable extensive reading, as well as a potential pedagogical mismatch between different official milestones in language learning and providing a comprehensive scaffold to graduate to native content (\cite{Nation2020GradedRA}).
+
+Finally, it's been reassuring that the basis of \textbf{Spaced Repetition} has been replicated (\cite{Murre2015ReplicationAA}) and improved (\cite{SuperMemo_Method_2023}, \cite{essay89410}, \cite{shortestpathrepetitionscheduling}) since Ebbinghaus' initial observation in the late 1800s. 
+
+While each of these topics have been well-studied on their own, I did not find many papers that explored intersections between them. One article analogizes extensive reading and repetition (\cite{bullaughey2019reading}), but I did not find any papers that attempted to weave spaced repetition into a dynamically generated graded reader.
+
+This observation has me feeling positive about my question exploring previously under-examined ground. That question being: Can an LLM dynamically adjust the difficulty of a text to create extensive reading content tailor-made for that learner's level?
 
 \section{Reflection}
-%In about half a page, reflect on the process of finding sources, reading papers, synthesizing their contents, and building your understand. What was difficult, and what was easy? What are you finding yourself interested in going forward?
-It's very hard to summarize papers that introduce entirely new frameworks, especially when they rely on math.
-Spanish will be easier than Mandarin since word boundaries are defined by spaces.
+%In about half a page, reflect on the process of finding sources, reading papers, synthesizing their contents, and building your understanding. What was difficult, and what was easy? What are you finding yourself interested in going forward?
+In general, the sheer volume of reading and writing would have been daunting if not for a deep personal interest in the topics covered by each paper. Configuring bibtex took longer than I had expected. I was also impressed by Chat GPT as a tool for identifying relevant papers, although it would frequently miss key pieces of nuances when suggesting some papers. I found it in general a superior launching pad than Google Scholar but a worse resource than a relevant paper's bibliography.
+
+In retrospect, I may have spent too much time understanding the history of a topic rather than jumping to the best-in-breed current approach. However, I found it difficult to ask the right questions to unveil the more recent papers without finding seminal papers from the past, seeing which contemporary papers cited them, and reading about which new hypotheses they form.
+
+I found it challenging to summarize papers that introduce entirely new frameworks, especially when they rely on math. It was liberating to keep the summaries to three sentences, but it forces glossing over any interesting statistical innovation in the paper.
+
+I continue to be interested in my original project idea, of creating massive comprehensible input for extensive reading, with vocabulary in the text adjusting to reader's level.
 
 \section{Planning}
 %In about half a page, provide a plan for what you expect to do next week. What threads or ideas will you pursue? What questions will you seek answers to in the literature?
+
+I'm interested in assessing the potential of leveraging an LLM for word boundary discrimination. In languages like Mandarin Chinese, there are no spaces between words, meaning that a system will not be able to automatically identify which sequence of characters represent the word that a user means to click on (to signal they forgot it) without additional metadata or computation at time of lookup. I also need to research different web frameworks and dictionaries to use for my project and it will be interesting to see how many of these are covered by research vs. technical documentation.
 
 Interested in observation that HSK 6 requires 2,500 vocabulary words, which maps onto the minimum deemed necessary for reading simplified texts. Am also missing confirmation on the 2,500 number, but it's intuitive that there would be some floor of vocabulary at which point it's impossible to reduce meaning further without losing critical context, ie telescope can be replaced with 'glass attached to pipe' but that's more confusing than clarifying.
 
