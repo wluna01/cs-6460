@@ -15,9 +15,9 @@
 \section{Background}
 %In about half a page, summarize your current state. For this Research Log, this is likely a summary of your prior interests. If you already know what you are interested in doing, you’d write about that; if you don’t, you’d write about your more general interests in Educational Technology.
 
-I'm starting the term with a clear idea of what want to make, but with a cursory understanding of the research that surrounds it.
+I'm starting the term with a clear idea of what I want to make, but with a cursory understanding of the research that surrounds it.
 
-As an avid language learner, I've noticed that most products–from consumer app to community college course–are focused on active learning. I've often felt a lack of attractive options for passive learning, such as watching TV or reading a book, makes it difficult to take study during parts of the day when most people have lower motivation. Of course, most languages have no shortage of media to engage with. However, most of this media is either geared at native speakers, making it effortful to comprehend as a student, or "graded content" that is helpful but difficult to acquire in sufficient volume for the student's current level.
+As an avid language learner, I've noticed that most products–from consumer apps to community college course–are focused on active learning. I've often felt that the lack of attractive options for passive learning, such as watching TV or reading a book, makes it difficult to study during parts of the day when most people have lower motivation. Of course, most languages have no shortage of media to engage with. However, most of this media is either geared at native speakers, making it effortful to comprehend as a student, or "graded content" that is helpful but difficult to acquire in sufficient volume for the student's current level.
 
 An additional wrinkle is that students of a foreign language have higher variability in their background and proficiency than native speakers. If a touring musician has near-native English vocabulary to describe music but has never used the language to talk about computers, they need a very different IT lesson than someone who works in the tech industry.
 
@@ -39,6 +39,8 @@ This paper provides evidence that a reader has to know ninety-eight percent of t
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
 The key takeaway is that any system that seeks to generate text to optimize passive vocabulary acquisition should strive for ninety-eight percent comprehension. It also suggests that it is easier to generating fiction that achieves this threshold than non-fiction. It also confirms one unspoken assumption of the study, which is that vocabulary comprehension strongly correlates to overall comprehension of a text. The conclusion posits that there are three types of reading for language acquisition, Intensive reading, extensive reading for language growth (target 98 percent words known), and extensive reading for developing fluency (target all words known).
+
+Also, that fiction is likely the best type of text for extensive reading.
 %
 \subsection{\fullcite{nation1992vocabulary}}
 %The paper’s bibliographic information (its APA citation, typically)
@@ -48,11 +50,11 @@ I found this paper in the literature review from \cite{hu_2000} and it felt rele
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-This paper attempts to answer the question of if knowing 2,000 words is sufficient to enable reading young adult fiction for pleasure? Assuming the learner knows all 2,000 of the most common English words (as defined by West 1953), and the target 98 percent known words established by the paper above, the answer is no. It would take 5,000 words to reach sufficient coverage in most of the texts analyzed. The study then offers that the text can either be simplified to achieve this coverage, or the necessary vocabulary can actively studied before or during the reading process. Simplification is proposed at 2,500, 5,000 and 7,000 grades, and simplification rules are presumably enabled via the Oxford Concordance Programme.
+This paper attempts to answer the question of if knowing 2,000 words is sufficient to enable a student to read young adult fiction for pleasure. Assuming the learner knows all 2,000 of the most common English words (as defined by West 1953), and the target 98 percent known words established by the paper above, the answer is no. It would take 5,000 words to reach sufficient coverage in most of the texts analyzed. The study then offers that the text can either be simplified to achieve this coverage, or the necessary vocabulary can actively studied before or during the reading process. Simplification is proposed at 2,500, 5,000 and 7,000 grades, and simplification rules are presumably enabled via the Oxford Concordance Programme.
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-This study affirms that even young adult fiction requires too high a level of vocabulary for most second language learners. Thankfully, it provides evidence that these texts can be simplified to a level where a student who knows 2,500 words will have ninety-eight percent vocabulary coverage. It also begs the question of what the current standards are for programmatically simplifying texts.
+This study affirms that even young adult fiction requires too high a level of vocabulary for most second language learners (the 5,000 most common words). Thankfully, it provides evidence that these texts can be simplified to a level where a student who knows 2,500 words will have ninety-eight percent vocabulary coverage. It also begs the question of what the current standards are for programmatically simplifying texts.
 %
 \subsection{\fullcite{stajner-2021-automatic}}
 %The paper’s bibliographic information (its APA citation, typically)
@@ -80,7 +82,7 @@ The paper points out current limitations of machine-learning driven approaches t
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-Biggest takeaway is actually the meta-observation on using quantitative human-generated data to prove the efficacy of some proposed computer-generated alternative. It is unlikely that I my project will allow for such scope, but is a fantastic idea. I also realize that evaluation frameworks for simplifying a text into the same target language (ie monolingual text simplification) may not be a well-studied field with consensus on the best tools to assess model accuracy. In the event that an LLM is insufficient at simplifying text, or generating new text at a sufficiently simple level, I may leverage the algorithm provided in this paper.
+Biggest takeaway is actually the meta-observation on using quantitative human-generated data to prove the efficacy of some proposed computer-generated alternative. It is unlikely that my project will allow for such scope, but is a fantastic idea. I also realize that evaluation frameworks for simplifying a text into the same target language (ie monolingual text simplification) may not be a well-studied field with consensus on the best tools to assess model accuracy. In the event that an LLM is insufficient at simplifying text, or generating new text at a sufficiently simple level, I may leverage the algorithm provided in this paper.
 %
 \subsection{\fullcite{sulem-etal-2018-semantic}}
 %The paper’s bibliographic information (its APA citation, typically)
@@ -111,7 +113,7 @@ The paper proposes DRESS (\textbf{D}eep \textbf{Re}inforcement \textbf{S}entence
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-This paper provides strong evidence that neural networks are probably the most effective means of non-human sentence simplification available in 2024. Although whether an specialized LLM can outperform, much less compete on par with, a purpose-built neural network is impossible to conclude from this article alone.
+This paper provides strong evidence that neural networks were probably the most effective means of non-human sentence simplification available in 2016. Although whether a modern LLM can outperform such a neural network is impossible to conclude from this article given its year of publication and scope.
 
 \subsection{\fullcite{feng2023sentence}}
 %The paper’s bibliographic information (its APA citation, typically)
@@ -153,7 +155,7 @@ The paper examines the performance of GPT 4 on sentence simplification. It intro
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-This paper, despite dedicating a lot of discussion to optimizing humans as \textit{evaluators} of LLM output, doesn't make a conclusion on how well humans \textit{produce} sentencen simplifications compared to GPT-4. I've also noticed that most of the papers highlighted here so far rely on frighteningly few text corpora, notably Wiki{simple | large} and Newsela. This has me concerned that too many conclusions have been drawn from models all built on the same data. This may be the most thorough paper of the bunch so far.
+This paper, despite dedicating a lot of discussion to optimizing humans as \textit{evaluators} of LLM output, doesn't make a conclusion on how well humans \textit{produce} sentence simplifications compared to GPT-4. I've also noticed that most of the papers highlighted here so far rely on frighteningly few text corpora, notably Wiki{simple | large} and Newsela. This has me concerned that too many conclusions have been drawn from models all built on the same data. This may be the most thorough paper of the bunch so far.
 
 \subsection{\fullcite{Murre2015ReplicationAA}}
 %The paper’s bibliographic information (its APA citation, typically)

@@ -23,7 +23,7 @@
 
 \subsection{Need}
 %What is the need? What problem is trying to be solved or phenomenon trying to be investigated?
-The title gives this away-the paper seeks to determine how much vocabulary is needed to be able to read un-simplified (ie aimed at native speakers) texts for pleasure? Pleasure being defined as the ability to read and comprehend the text without the need for effortful reading or active lookup of novel words.
+The title gives this away-the paper seeks to determine how much vocabulary is needed to be able to read un-simplified (ie aimed at native speakers) texts for pleasure. Pleasure being defined as the ability to read and comprehend the text without the need for effortful reading or active lookup of novel words.
 
 \subsection{Method}
 %What is method? What did they build to solve the problem? What did they do to investigate the phenomenon?
@@ -96,7 +96,7 @@ Those who stand to benefit from the results are different from those engaged in 
 %What were the results? What did they find?
 The study found that GPT-4 surpassed a SOTA (state-of-the-art) model on all aspects of performance, according to all available benchmarks, both human and automated, for evaluation.
 
-The study also found that its proposed framework for human evaluation produced results with less variability between human reviewer. Despite this, it concludes that both these and automated benchmarks are too coarse to accurately distinguish between more minor gradations in model performance, where output may not contain a mistake but have leverage a sub-optimal phrasing or circumlocution.
+The study also found that its proposed framework for human evaluation produced results with less variability between human reviewer. Despite this, it concludes that both these and automated benchmarks are too coarse to accurately distinguish between more minor gradations in model performance, where output may not contain a mistake but have leveraged a sub-optimal phrasing or circumlocution.
 
 \subsection{Critique}
 %Critique the alignment between need, audience, method, and results.
@@ -131,7 +131,7 @@ Pre- and post-tests revealed that not only did the experimental group have impro
 %Critique the alignment between need, audience, method, and results.
 %Are the results justified by the method? Does the method address the need? Is the audience fitting for the need?
 %Overall, how strong is the alignment between need, audience, method, and results?
-Of all the papers I read this week, I felt this one had by far the most methodology. Significant sample size, diversity of texts (twenty graded readers), sufficiently longitudinal in both testing and administration, testing for both speed and comprehension, statistical clarity in analyzing the results. I suppose the study could have expanded the subject pool to explore the impact of student proficiency on the benefit of audio-assisted reading (all participants were beginners). 
+Of all the papers I read this week, I felt this one had by far the most robust methodology. Significant sample size, diversity of texts (twenty graded readers), sufficiently longitudinal in both testing and administration, testing for both speed and comprehension, statistical clarity in analyzing the results. I suppose the study could have expanded the subject pool to explore the impact of student proficiency on the benefit of audio-assisted reading (all participants were beginners). 
 
 \section{\cite{shortestpathrepetitionscheduling}}
 \subsection{Full Reference}
@@ -142,20 +142,25 @@ Of all the papers I read this week, I felt this one had by far the most methodol
 
 \subsection{Need}
 %What is the need? What problem is trying to be solved or phenomenon trying to be investigated?
+This paper attempts to solve the problem of (potentially) inefficient intervals between the presentation of content in a spaced repetition scheme. At the time the paper was written, Anki, the most popular spaced repetition software, continued to use a top-down rules-based approach based on principles of cognitive science established decades prior. Due to the volume of learners using the software, even a marginal improvement in the intervals between recall tasks would save thousands of hours in study time.
 
 \subsection{Method}
 %What is method? What did they build to solve the problem? What did they do to investigate the phenomenon?
+A statistical model of long-term memory is built on top of data collected from a Chinese variant of a web app similar to Anki, called MaiMemo. Multiple algorithms are simulated on this model, using dynamic programming to optimize intervals from data collected in the app. The stochastic model is compared to several baselines, including random intervals, simple rule-based approaches, and the system (at the time) used by Anki.
 
 \subsection{Audience}
 %Who is the audience? Who are the participants or subjects?
+Only simulations are run with no participants or subjects. The intended audience is presumably any user of flash card apps such as Anki or MaiMemo. Anecdotes focus on Chinese students using flash card software to study English, but even if the data set were limited to foreign language vocabulary, the conclusions may transfer to other domains.
 
 \subsection{Results}
 %What were the results? What did they find?
+The novel model proposed by the results of the dynamic programming outperformed all other benchmarks in simulation. It claims a reduction in the time to commit the contents of any flash card into long-term memory by twelve percent. An updated version of the model would be re-branded as FSRS (Free Spaced Repetition Scheduler) and \href{https://www.reddit.com/r/Anki/comments/1c29775/fsrs_is_one_of_the_most_accurate_spaced/?share_id=d13fqqdzSlqgHFhq0kJ7M&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1}{adopted by Anki as the default scheduling algorithm in its flash card software}.
 
 \subsection{Critique}
 %Critique the alignment between need, audience, method, and results.
 %Are the results justified by the method? Does the method address the need? Is the audience fitting for the need?
 %Overall, how strong is the alignment between need, audience, method, and results?
+I believe the paper has strong alignment between the sections outlined above. While I initially felt that a study with actual participants was necessary to conclude the results, reflection made me feel that evaluating the model's output against test data from the MaiMemo app is likely sufficient. Whether or not the data is collected before or after the development of a machine learning model seems irrelevant. While the conclusions of the study are difficult for most users of spaced-repetition software to interpret, most users of any product do not aim to understand the inner workings of that product. I do not feel this compromises alignment either.
 
 \printbibliography{}
 
