@@ -69,7 +69,9 @@ Despite variation in individual student performance, no group exposed to a versi
 %Critique the alignment between need, audience, method, and results.
 %Are the results justified by the method? Does the method address the need? Is the audience fitting for the need?
 %Overall, how strong is the alignment between need, audience, method, and results?
-I consider the Need, Method and Audience of the study to be aligned. Although I would have appreciated greater defense of why this experiment cannot be run on native speakers of the text's language, if nonsense words are being used. I am more critical of the results. They claim that this study provides "experimental support" for an earlier paper's claim that learners need ninety-eight percent coverage to be able to read for pleasure. However, there's no direct evidence to suggest this, only indirect evidence that fails to refute it. I am surprised it does not suggest the obvious follow-up study of administering the same experiment but with more conservative alterations to the text, say ninety-five, nine-eight, ninety-nine, and one-hundred percent original text, to have a more precise view of the ideal threshold. 
+I consider the Need, Method and Audience of the study to be aligned. Although I would have appreciated greater defense of why this experiment cannot be run on native speakers of the text's language, if nonsense words are being used. I am more critical of the results. They claim that this study provides "experimental support" for an earlier paper's claim that learners need ninety-eight percent coverage to be able to read for pleasure. However, there's no direct evidence to suggest this, only indirect evidence that fails to refute it. I am surprised it does not suggest the obvious follow-up study of administering the same experiment but with more conservative alterations to the text, say ninety-five, nine-eight, ninety-nine, and one-hundred percent original text, to have a more precise view of the ideal threshold.
+
+What's even more interesting is this study \textit{does} refute research cited by the above paper from Laufer and Liu that ninety-five percent is an adequate threshold (\cite{nation1992vocabulary}). I would have appreciated recognition of this fact.
 
 \section{\cite{wu2024indepth}}
 \subsection{Full Reference}
@@ -80,20 +82,27 @@ I consider the Need, Method and Audience of the study to be aligned. Although I 
 
 \subsection{Need}
 %What is the need? What problem is trying to be solved or phenomenon trying to be investigated?
+The paper calls out the importance of sentence simplification technology for any population with reading difficulties, but does not go into specifics (learning disabilities, foreign language learners, etc). Given the growing ubiquity of LLMs, assessing whether or not they can perform adequately at sentence simplification tasks is important for making written language more accessible. Therefore, the paper wants to determine if it's possible and if so how to best evaluate LLMs' performance at this task.
 
 \subsection{Method}
 %What is method? What did they build to solve the problem? What did they do to investigate the phenomenon?
+The paper proposes a novel framework for human evaluation of LLM sentence simplification, which it applies alongside several automated metrics already established in the field. The goal of this method is two-fold: assess whether the novel framework is more effective than existing options, and assess how LLMs compare to neural network-based approaches.
 
 \subsection{Audience}
 %Who is the audience? Who are the participants or subjects?
+Those who stand to benefit from the results are different from those engaged in the methodology. The human evaluators employed in annotating and rating the results of the LLM output do not have any presumed challenges with reading unsimplified text. The beneficiaries of the study, however, do.
 
 \subsection{Results}
 %What were the results? What did they find?
+The study found that GPT-4 surpassed a SOTA (state-of-the-art) model on all aspects of performance, according to all available benchmarks, both human and automated, for evaluation.
+
+The study also found that its proposed framework for human evaluation produced results with less variability between human reviewer. Despite this, it concludes that both these and automated benchmarks are too coarse to accurately distinguish between more minor gradations in model performance, where output may not contain a mistake but have leverage a sub-optimal phrasing or circumlocution.
 
 \subsection{Critique}
 %Critique the alignment between need, audience, method, and results.
 %Are the results justified by the method? Does the method address the need? Is the audience fitting for the need?
 %Overall, how strong is the alignment between need, audience, method, and results?
+While thorough, I felt this lost some clarity of vision by attempting to simultaneously asses a novel evaluation framework and how existing frameworks benchmark GPT-4 against other sentence simplification systems. While the paper draws meaningful conclusions in both domains, it's easy to interpret each conclusion as frustrating the other, since one makes a statement about the limitation of evaluation frameworks, while the other leverages those same frameworks to make a statement about GPT-4's superior performance.
 
 \section{\cite{Chang2015ImprovingRR}}
 \subsection{Full Reference}
