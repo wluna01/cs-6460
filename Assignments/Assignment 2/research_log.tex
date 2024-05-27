@@ -297,31 +297,26 @@ The research above includes several conclusions on how dictionaries interact wit
 
 The high-level takeaway from this set of papers is that quick and easy access to a dictionary when reading in a foreign language is essential to guarantee effective vocabulary acquisition. The availability of the dictionary is considerably more important than the nuances of how it provides definitions or the proficiency level of the student.
 
-A second category of papers explored the technical details of building a language learning tool on top of an LLM. \cite{cepedasrs}
+A second category of papers explored the technical details of building a language learning tool on top of an LLM. One paper provided several examples of LLMs already being in consumer language learning apps and achieving mass adoption, proving that at least in general, the idea has market validation \pcite{caines2023application}. Continuing off the history of sentence simplification last week, additional papers make it seem likely that an LLM will outperform the any current best-in-breed neural network or machine learning model on most NLP tasks that would be relevant to text generation \pcite{pilán2016readable}. Equally important as performance, multiple low-cost APIs exist to validate an initial prototype will be cheap to build \pcite{mochiAPI, merriamWebsterAPI}. This is in part thanks to the fact that the cost of an LLM is anchored to input and output tokens, which have an extremely low cost per word \pcite{liu2023lost, mlq2023tokens}. Frameworks such as Flask also make it possible for a quick prototyping with minimal web development experience \pcite{ghimire2019comparative}.
 
-LLMs are already used in consumer language learning apps that have mass adoption \cite{caines2023application}
-They can probably outperform a neural network or ML model on most NLP tasks relevant to language learning \cite{pilán2016readable}
-Will be cheap, as long as the tokens are under control \cite{liu2023lost, mlq2023tokens}
-Use Flask \cite{ghimire2019comparative}
-\cite{mochiAPI}
-\cite{merriamWebsterAPI}
 
 \section{Reflection}
 %In about half a page, reflect on the process of finding sources, reading papers, synthesizing their contents, and building your understanding. What was difficult, and what was easy? What are you finding yourself interested in going forward?
 I found locating relevant research papers much easier this week, having had the previous week to develop the skill of quickly skimming abstracts and knowing to which sites the Georgia Tech login provides access. I also had a great deal of follow-up questions from the first week, which made generating lines of inquiry straightforward. 
 
-\section{Planning}
-%In about half a page, provide a plan for what you expect to do next week. What threads or ideas will you pursue? What questions will you seek answers to in the literature?
-I may struggle with my research log next week. I feel fairly confident about the direction and principles of my project and would actually prefer to spend a week building it to see which questions arise during the process. The obvious questions like what type of dictionary to use, which language to start with, how to blend spaced repetition into extensive reading, etc. feel at least generically answered. 
-
-With this in mind, I may turn next week's attention to technical implementation details. Looking into the potential APIs for translations and flash cards was quite illuminating, although it will be increasingly difficult to glean that information from a diet of mostly research papers.
-
+This constellation of observations led me to an initial project proposal for a system that dynamically generates a story to match the level of a student's foreign language proficiency, presenting new vocabulary at optimal intervals for long-term retention:
 \begin{figure}
     \centering
     \includegraphics[width=0.5\linewidth]{Assignments//Assignment 2/design_sketch.png}
     \caption{Lazy Initial Project Diagram}
     \label{fig:enter-label}
 \end{figure}
+
+\section{Planning}
+%In about half a page, provide a plan for what you expect to do next week. What threads or ideas will you pursue? What questions will you seek answers to in the literature?
+I may struggle with my research log next week. I feel fairly confident about the direction and principles of my project and would actually prefer to spend a week building it to see which questions arise during the process. The obvious questions like what type of dictionary to use, which language to start with, how to blend spaced repetition into extensive reading, etc. feel at least generically answered. 
+
+With this in mind, I may turn next week's attention to technical implementation details. Looking into the potential APIs for translations and flash cards was quite illuminating, although it will be increasingly difficult to glean that information from a diet of mostly research papers.
 
 \printbibliography{}
 
