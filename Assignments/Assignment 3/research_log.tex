@@ -198,22 +198,23 @@ Found by searching for papers that cite \cite{important_adaptive_learning_exerci
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-
+KARL (\textbf{K}nowledge-\textbf{A}ware \textbf{R}etrieval and Representations aid Retention and \textbf{L}earning in Students) is introduced as a system that leverages Deep Knowledge Tracing (see Peich above) to imbue the information from an SRS scheduler with semantic and recall relationships with other words, creating a more comprehensive model of student knowledge. "if a student knows that John Adams is the second American president, the student model should be able to infer that the student can also answer 'Who was the first American president?', even if this question has not been studied." A balance between comprehensiveness in embedding and speed of updating an online neural network is discussed. KARL's performance is on-par with FSRS, an algorithm explored in earlier research logs.
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-
+This is a preprint submitted to arxiv in February 2024, less than three months ago. The fact that KARL does not handily outperform FSRS, in addition to the extra latency, cost, and complexity in implementing a neural network, provides evidence that FSRS should thankfully be a sufficient memory model implementation for my project. I also found the specificity of the use case for this method surprising–it relies on the assumption that the flashcards have long, semantically-rich explanations rather than the single word translations commonly-found in language learning reviews. This limited application implies that there is an ocean of work on this topic of which I still have no awareness.
 
 \subsection{\fullcite{generative_information_retrieval}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
-
+Found this paper by looking at papers that cited the last three papers discussed above.
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-
+Provides a literature overview of generative information retrieval, aka information retrieval that leverages LLMS. Document Identifier Design, Incremental Learning, decoding, optimization, scaling, RAG, and benchmarking are all discussed as ongoing challenges in the forty page report. The emerging nature of all these sub-topics is emphasized (preprint less than a month old).
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
+This paper is further evidence that using an LLM to store a representation of student knowledge would add too much complexity to a project I have a hope of completing in this class. Although it gives me hope that there will soon be off-the-shelf APIs that abstract many of the challenges presented here.
 
 \subsection{\fullcite{knowledge_tracing_survey}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
@@ -221,10 +222,18 @@ This paper was discussed in another student's work which I reviewed during peer 
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
+Another literature review of knowledge tracing emphasizing the roots in the 1980s up until the groundbreaking application of deep learning to the problem (see Piech, above). Includes a section dedicated to the datasets most commonly used to benchmark the performance of a knowledge KT model, as well as future research opportunities, notable multi-modal representations, self-supervised learning, and interactive knowledge. Interactive Knowledge Tracing is the prompting of specific questions during "cold start scenarios" to enable the KT model to build a comprehensive understanding of the student's knowledge as quickly as possible.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Assignments//Assignment 3/knowledge_tracing_survey.png}
+    \caption{An example scenario for knowledge tracing in an Intelligent Tutoring System (ITS)}
+    \label{fig:enter-label}
+\end{figure}
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
+This was the first time I noticed a palpable difference in paper quality between the pre-prints vs. peer-reviewed publications on arxiv. It forces striking a balance between recency and polish. I wish I read this paper first in the lineage on knowledge tracing. Perhaps a learning to tackle peer reviews \textit{before} the research for the week, since I would have caught this paper much earlier. The clear explanation of how various supervised machine learning models have been applied was helpful (logistic regression, bayesian, etc).
 
 \subsection{\fullcite{deep_learning_knowledge_tracing}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
