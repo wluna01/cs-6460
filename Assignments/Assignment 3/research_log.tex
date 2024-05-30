@@ -26,9 +26,9 @@ The research from last week brought a great deal of clarity to what I want to fo
 
 This is a very formal way of pointing out what is perhaps quite obvious: we read books, look up new words when we don't recognize them, and can bet that the same book will use those new words enough to cement them into our long-term memory.    
 
-Almost all of the papers reviewed in the last two weeks either provide evidence for one of the numbered statements above, or address a challenge in implementing them, such as "how to best provide extensive reading material to beginners?", "are monolingual or bilingual dictionaries more effective?", or "what is the most efficient algorithm for spaced repetition?" 
+Almost all of the papers reviewed in the last two weeks either provide evidence for one of the numbered statements above, or address a challenge in implementing them, such as "how to best provide extensive reading material to beginners?", "are monolingual or bilingual dictionaries more effective?", or "what is the most efficient algorithm for spaced repetition?" This also includes an exploration into technical implementation, such as which spaced repetition algorithm is the most effective, whether an LLM or more traditional machine learning algorithm is suited for text generation, etc. 
 
-NEEDS SECTION ON WHAT I HOPE TO GET OUT OF PAPERS BELOW.
+In the process of shoring up my understanding of the learning science, I came across some important, novel concepts. This week's papers are focused on \textbf{controllable story generation} (particular using LLMs), \textbf{knowledge tracing}, the \textbf{zone of proximal development}, and a couple of recently discovered language learning products, notably Prismatext (\textbf{diglot weave}) and Hyplern (\textbf{interlinear glossing}).
 
 \section{Papers and Other Reference Material}
 %As you walk through the Research Guide, you’ll be finding lots of papers to read. Here, you’ll make a list of the papers you come across and give considerable attention to. We would expect the Research Log to include at least 15-20 sources (though more is fine as well), and at least 12 (preferably more) should be academic and peer-reviewed. You may include blog posts, newspaper articles, etc. as well, but you should have at least 12 academic sources, too.
@@ -124,16 +124,24 @@ Researchers fine-tune a publicly-available LLM on top of writing prompts and cor
 %In around three sentences, the main takeaways going forward
 This paper's use of story starters echoes my similar idea to start all stories with one of a handful of introductions. It also highlights the challenge in establishing useful evaluation frameworks. In my opinion, the evaluation framework mismatches the goal of the study, since proving that the fine-tuned model outperforms the others does not explicitly validate a user's apetite or overall enthusiasm for the exercise of creating a story together with an AI.
 
- \subsection{\fullcite{taiwan_adaptive_testing}}
+\subsection{\fullcite{taiwan_adaptive_testing}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
-
+Searched for papers on collaborative storytelling on Google Scholar.
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
+Paper assesses the feasibility of integrating an LLM into the Taiwan Adaptive Learning Platform, an educational tool established by the country's ministry of education. TALP is described as a tool that asks students questions and based on a hierarchy of skills and knowledge, both drills-down and emphasizes the elements of a quiz the student's answer incorrectly. This is anchored in Vygotsky's socio-cultural theory and Zone of Proximal Development. 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Assignments//Assignment 3/TALP_GPT.png}
+    \caption{: Implementing chatbot in the TALP’s diagnostic report}
+    \label{fig:enter-label}
+\end{figure}
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
+This is an interesting case study on how a top-down, rules-based system (TALP) and a black-box LLM (Chat GPT) can be integrated effectively. This is encouraging, given that I am considering a similar integration (top-down vocabulary SRS system with LLM-driven story generation).
 
 \subsection{\fullcite{important_adaptive_learning_exercise_generation}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
@@ -153,19 +161,18 @@ Cited in the above paper.
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-Provides a primer for using a recurrent neural network to model and predict student performance.
+Provides a primer for using a recurrent neural network to model and predict student performance. Historical use of Bayesian modeling for knowledge tracing is discussed, including Hidden Markov models. The paper considers two innovative approached to knowledge tracing, a vanilla RNN and a LSTM, with the RNN method beating the current SOTA approach based on knowledge tracing benchmarks that were also novel to me.
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
-An example where a large language model has more obstacles in replacing a neural network, not sure how the student knowledge state would remain observable in an LLM. Creates something of an earthquake of realization for my project–should I be using knowledge tracing to store a representation of student knowledge instead of spaced repetition flashcards? If still necessary to utilize a traditional LLM for content generation, how to blend into a vanilla LLM?
+An example where a large language model has more obstacles in replacing a neural network, not sure how the student knowledge state would remain observable in an LLM. Creates something of an earthquake of realization for my project–should I be using knowledge tracing to store a representation of student knowledge instead of spaced repetition flashcards? If still necessary to utilize a traditional LLM for content generation, how to blend into a vanilla LLM? I think these technical challenges take the possibility firmly beyond the scope of a project I can hope to finish in this class, however.
 
 \subsection{\fullcite{question_generation_adaptive_education}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
-
+Searched for papers on collaborative storytelling on Google Scholar.
 
 \subsubsection{Summary}
-%In around three sentences, a brief, original summary in your own words
-
+%In around three sentences, a brief, original summary in your own words 
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
