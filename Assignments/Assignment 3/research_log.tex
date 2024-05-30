@@ -173,9 +173,11 @@ Searched for papers on collaborative storytelling on Google Scholar.
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words 
+Paper outlines a method of fine-tuning a KT-LM (knowledge tracing language model) to generate questions and predicting the likelihood that the student will answer the question correctly as a proxy for difficulty. This model is trained and tested on a dataset of student prompts and answers from Duolingo and found accuracy to be high enough to conclude this as a viable means of generating translation tasks for second language students. 
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
+This paper let me sit with the implementation details of a knowledge tracing model and convinced me that it would not be feasible for this course project. However, in theory this may be the best means of generating a story based on an understanding of the student's vocabulary, optimized to estimate 98 percent known words. There's a chicken and egg problem. With enough training data from a simpler system, it would become possible to train a KT model (Duolingo is a perfect analogy, since it's language tasks remain mostly the product of top-down design).
 
 \subsection{\fullcite{llm_augmented_exercise_retrieval}}
 
@@ -184,10 +186,11 @@ Found by searching for papers that cite \cite{important_adaptive_learning_exerci
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
-
+Focuses on \textit{learner initiated personalization}, under the pretense that giving learners the ability to shape their learning experience drives motivation and self-actualization. The paper proposes a \textit{multilingual Hypothetical Exercise Retriever} (mHyER) that is able to combine an evolving representation of student knowledge with that student's requested activities to suggest activities of that type at the appropriate level. This model has AUC (area under curve) gains over mBert, and mContreiver, which the study considers proof of a new SOTA model.
 
 \subsubsection{Takeaways}
 %In around three sentences, the main takeaways going forward
+
 
 \subsection{\fullcite{flashcard_scheduler_evolution}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
@@ -261,6 +264,17 @@ I take this blog post as further validation that combining spaced repetition wit
 \subsection{\fullcite{diglot_weave}}
 %In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
 A friend recommended Prismatext as a product for language learning and it turned out to be adjacent to the project's objective as well as the other research topics explored so far. It relies on a technique called diglot weave, and this is one of, if not the most, notable research on the method.
+
+\subsubsection{Summary}
+%In around three sentences, a brief, original summary in your own words
+
+
+\subsubsection{Takeaways}
+%In around three sentences, the main takeaways going forward
+
+\subsection{\fullcite{free_voluntary_reading}}
+%In around one sentence, how you found it (a Google Scholar search? From a conference’s proceedings? From another paper’s references? %Something else?)
+My mentor recommended I read more Krashen papers and this was cited in \pcite{llm_augmented_exercise_retrieval}.
 
 \subsubsection{Summary}
 %In around three sentences, a brief, original summary in your own words
