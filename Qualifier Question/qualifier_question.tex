@@ -1,0 +1,66 @@
+\documentclass[
+	%a4paper, % Use A4 paper size
+	letterpaper, % Use US letter paper size
+]{jdf}
+
+\addbibresource{references.bib}
+% Define custom command for parentheses citation
+\newcommand{\pcite}[1]{(\cite{#1})}
+
+\author{William Luna}
+\email{wluna6@gatech.edu}
+\title{Qualifier Question}
+
+\begin{document}
+%\lsstyle
+
+\maketitle
+%INSTRUCTIONS
+%Before you can move on to proposing a contribution to the educational technology community, you need to demonstrate your mastery of the portion of the field to which you want to contribute. Because everyone’s interests and project ideas will be different, there is no question we can ask everyone that will be simultaneously deep enough to be challenging and general enough to cover everyone.
+
+%So instead, on or by Friday of week 3, your mentor will send you a personal qualifier question targeted specifically to what you wrote on the first few assignments. This question will ask you to think deeply about the topics you have chosen. For the research track, it might ask you to synthesize and describe the viewpoints of different communities or research methodologies on your ideas. For the development track, it might ask you to describe the broader issues or pedagogical challenges associated with your intended designs. For the content track, it might ask you to consider elements of pedagogy and or instruction you have not yet considered.
+
+%The primary goal of this assignment is to demonstrate your mastery of the portion of the field to which you want to contribute. In simpler words, the primary goal of this assignment is to show off what you know and how you can think. This is the closest thing this class has to a test. Adequately completing this assignment will require a significant command over the literature on your topic (in other words, several citations to others’ work in your area).
+
+%Your assignment should be approximately 4 pages long in JDF. This is neither a minimum nor a maximum, but rather a heuristic to simply describe the level of depth we would like to see. Feel free to write more, or if you believe you can complete the assignment in fewer words, feel free to write less. Please make sure to include the question text itself so that your peer reviews know what you were asked to answer.
+
+\section{Question}
+
+\blockquote{Leveled readers have been a standard feature of K12 education for years and many best practices have developed over time.  What does the literature suggest are those principles/practices (eg. introducing more complex words and constructions in a controlled sequence and avoiding their use prior to that introduction)? How can an LLM best be induced to follow these practices?}
+
+\section{Response}
+
+- What are the best practices for leveled and/or graded readers
+  - note the distinction between leveled and graded readers
+    - note any relevant differences in pedagogy
+      - students learning to read in their first language are learning to read words they already know, while ESL students are often encountering the vocabulary for the first time (source)
+  - introducing new words at a deliberate pace that facilitates vocabulary acquisition through context
+  - providing fast lookup of words when necessary
+    - explore perspectives on what kind of dictionary is superior (monolingual vs bilingual)
+  - providing subsequent exposures to new words that follow the forgetting curve
+    - enabled by spaced repetition software
+    - have to consider lack of research that considers the possibility of inducing spaced repetition
+      - since the texts are static and the intervals a student takes between reading sessions are dynamic
+  - introducing new grammar along a similar curve (?)
+    - are there grammar dictionaries that can infer the grammatical structures in any selected sentence and explain them?
+      
+- The best way to induce an LLM to follow these practices
+  - automating the simplification of existing stories to a lexical and grammatical level suitable for the student
+    - evidence that students acquire vocabulary in a fluid, but generally predictable progression
+    - evidence that LLMs one-shot task performance performs relatively well at this task
+      - and evidence that context windows have become long enough to provide the full history of "known unknown" words
+        - ie words that the student has self-identified as not being in long-term memory by virtue of looking up in a dictionary
+  - use controllable story generation to adapt the story to the learning needs of the student 
+    - track exposures of new words 
+      - difficult to do perfectly since student has to actively self-identify which words they don't know in the passive activity of reading
+        - and limited research
+        - but possible through tracking which words a student looked up in a dictionary
+          - which emphasizes the importance of an integrated dictionary
+    - present "known unknown" words at a cadence that aligns with spaced repetition
+    - track exposure of new grammar
+      - under- explored, unclear how to surface grammatical challenges
+
+
+\printbibliography{}
+
+\end{document}
