@@ -33,23 +33,40 @@
 - What are the best practices for leveled and/or graded readers
   - note the distinction between leveled and graded readers
     - note any relevant differences in pedagogy
-      - students learning to read in their first language are learning to read words they already know, while ESL students are often encountering the vocabulary for the first time (source)
+      - students learning to read in their first language are learning to read words they already know, while ESL students are often encountering the vocabulary for the first time \cite{hu_2000}
   - introducing new words at a deliberate pace that facilitates vocabulary acquisition through context
-  - providing fast lookup of words when necessary
+    - based on Krashen's "i+1" theory that massive \textit{comprehensible} input is neccesary to learn new language material \cite{krashenreview}
+    - comprehension begins to dip if the percent of known words in a text falls below ninety eight percent \cite{hu_2000}
+    - uncommon words occur at a lower frequency in fiction that non-fiction, making fiction a better candidate for leveled readers \cite{hu_2000}
+  - creating leveled readers rather than attempting to find content aimed at young native speakers
+    - It requires knowing the 5000 most common words to know ninety eight percent of the words in young adult fiction \cite{nation1992vocabulary}
+      - and students normally don't reach 5000 words until X amount of time studying (source)
+    - it is difficult to simplify a text to use fewer than the 2,500 most common words of a language \cite{nation1992vocabulary}
+    - as a corollary, graded reading schemes should seek to bring a student's vocabulary up to the 5000 most common words in the target language to enable them to engage with material geared towards native speakers (\cite{Nation2020GradedRA})
+  - best retention of vocabulary from reading from "passive-first" environments where dictionarier are available but students are encouraged to first try and intuit or remember the meaning of unknown words \cite{mcdonald2016}.
+    - providing fast lookup of words when necessary
     - explore perspectives on what kind of dictionary is superior (monolingual vs bilingual)
   - providing subsequent exposures to new words that follow the forgetting curve
+    - a word has to be encountered on average ten times before being cemented in long-term memory \cite{Nation2020GradedRA}.
     - enabled by spaced repetition software
+      - FSRS emerging as best-performing algorithm \cite{shortestpathrepetitionscheduling}
     - have to consider lack of research that considers the possibility of inducing spaced repetition
       - since the texts are static and the intervals a student takes between reading sessions are dynamic
   - introducing new grammar along a similar curve (?)
     - are there grammar dictionaries that can infer the grammatical structures in any selected sentence and explain them?
+  - listening to audio transcriptions of text while reading it facilitates superior learning compared to reading the text on its own \cite{Chang2015ImprovingRR}
       
 - The best way to induce an LLM to follow these practices
+  - first, affirm that an LLM is the most effective way to simplify texts
+    - LLMs outperform neural networks, machine learning frameworks, and other rules-based approaches
+      - outperferm bespoke deep learning solutions (\cite{feng2023sentence}).
+    - Open AI's models were the best during a recent evaluation \cite{kew2023bless} and GPT 4 stood out in particular \cite{wu2024indepth}
   - automating the simplification of existing stories to a lexical and grammatical level suitable for the student
     - evidence that students acquire vocabulary in a fluid, but generally predictable progression
     - evidence that LLMs one-shot task performance performs relatively well at this task
       - and evidence that context windows have become long enough to provide the full history of "known unknown" words
         - ie words that the student has self-identified as not being in long-term memory by virtue of looking up in a dictionary
+    - as already discussed, beginning with texts simplified to use the 2500 most common words in the target language strikes balance between comprehensibility and nuance \cite{nation1992vocabulary}.
   - use controllable story generation to adapt the story to the learning needs of the student 
     - track exposures of new words 
       - difficult to do perfectly since student has to actively self-identify which words they don't know in the passive activity of reading
@@ -57,8 +74,16 @@
         - but possible through tracking which words a student looked up in a dictionary
           - which emphasizes the importance of an integrated dictionary
     - present "known unknown" words at a cadence that aligns with spaced repetition
+      - Ebbinghaus' forgetting curve has been replicated several times in modern research settings \cite{Murre2015ReplicationAA}
     - track exposure of new grammar
       - under- explored, unclear how to surface grammatical challenges
+  - establish an evaluation framework to model both the general and learner likelihood of comprehending the text (sources)
+    - mention best current evals (sari), \cite{xu-etal-2016-optimizing}, (less used) SAMSA \cite{sulem-etal-2018-semantic}, BLEU, ROUGE, human, BLESS (more recent) \cite{kew2023bless}
+      - pick only those that are used for LLM evals in future papers
+      - eval framework particulary important since humans continue to outperform LLMs at sentencen simplification by a significant margin\cite{kew2023bless}
+  - Use LLM to generate audio transcripts alongside the text it generates \cite{Chang2015ImprovingRR}
+  - Tailwind effect of using LLM is that a dynamic text generation makes it easier to extend a graded reading system to 5000 words.
+    - analysis of performance also makes it possible (though not necessarily requiring an LLM) to estimate the number of most common words the student knows.
 
 
 \printbibliography{}
