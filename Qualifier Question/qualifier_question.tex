@@ -43,15 +43,18 @@
       - and students normally don't reach 5000 words until X amount of time studying (source)
     - it is difficult to simplify a text to use fewer than the 2,500 most common words of a language \cite{nation1992vocabulary}
     - as a corollary, graded reading schemes should seek to bring a student's vocabulary up to the 5000 most common words in the target language to enable them to engage with material geared towards native speakers (\cite{Nation2020GradedRA})
-  - best retention of vocabulary from reading from "passive-first" environments where dictionarier are available but students are encouraged to first try and intuit or remember the meaning of unknown words \cite{mcdonald2016}.
-    - providing fast lookup of words when necessary
-    - explore perspectives on what kind of dictionary is superior (monolingual vs bilingual)
+  - best retention of vocabulary from reading from "passive-first" environments where dictionaries are available but students are encouraged to first try and intuit or remember the meaning of unknown words \cite{mcdonald2016}.
+    - providing fast lookup of words when necessary, since looking up words boosts retention, but discouraging excessive use of dictionary since it lowers reading speed \cite{dictionaryimportance}
+    - Type of dictionary, including monolingual vs bilingual, has less impact on learning than how it is accessed \cite{dictionarypitfalls, imagesdictionary, bilingual_dictionary}.
+    - Dictionaries are useful to all levels of foreign language student, but particularly helpful to beginners \cite{dictionaryvalue}
   - providing subsequent exposures to new words that follow the forgetting curve
+    - in broadest terms and intuitively, the more times a new word is used in a text, the more likely the reader is to remember it \cite{clockworkorange}.
     - a word has to be encountered on average ten times before being cemented in long-term memory \cite{Nation2020GradedRA}.
     - enabled by spaced repetition software
       - FSRS emerging as best-performing algorithm \cite{shortestpathrepetitionscheduling}
     - have to consider lack of research that considers the possibility of inducing spaced repetition
       - since the texts are static and the intervals a student takes between reading sessions are dynamic
+    - providing words in the text even after they have been committed to long-term memory \cite{cepedasrs}
   - introducing new grammar along a similar curve (?)
     - are there grammar dictionaries that can infer the grammatical structures in any selected sentence and explain them?
   - listening to audio transcriptions of text while reading it facilitates superior learning compared to reading the text on its own \cite{Chang2015ImprovingRR}
@@ -66,6 +69,7 @@
     - evidence that LLMs one-shot task performance performs relatively well at this task
       - and evidence that context windows have become long enough to provide the full history of "known unknown" words
         - ie words that the student has self-identified as not being in long-term memory by virtue of looking up in a dictionary
+        - despite evidence that LLMs have degraded retrieval of information provided in the middle of a context window, input tokens are sufficiently cheap and input window sufficiently large to provide details of several aspects of their vocabulary acquisition \cite{liu2023lost}
     - as already discussed, beginning with texts simplified to use the 2500 most common words in the target language strikes balance between comprehensibility and nuance \cite{nation1992vocabulary}.
   - use controllable story generation to adapt the story to the learning needs of the student 
     - track exposures of new words 
