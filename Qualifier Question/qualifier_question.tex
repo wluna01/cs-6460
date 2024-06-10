@@ -47,50 +47,24 @@ Dictionary use is another critical topic when discussing leveled readers. Should
 Finally, given that technology has a come a long way since leveled readers were first introduced, it should come as no surprise that some innovative modifications have been proposed. There is general consensus that listening to the audio transcription of a text while simultaneously reading it facilitates superior learning compared to reading the text on its own \pcite{Chang2015ImprovingRR}. While novel computer-assisted presentations of graded text such as interlinear reading and the diglot weave have been introduced in consumer language learning applications, research into their efficacy is inconclusive \pcite{hyplern_interlinear_reading, diglot_weave}.
 
 \subsection{How can an LLM best be induced to follow these practices?}
-      
-- The best way to induce an LLM to follow these practices
-  - first, affirm that an LLM is the most effective way to simplify texts
-    - LLMs outperform neural networks, machine learning frameworks, and other rules-based approaches
-      - outperferm bespoke deep learning solutions (\cite{feng2023sentence}).
-    - Open AI's models were the best during a recent evaluation \cite{kew2023bless} and GPT 4 stood out in particular \cite{wu2024indepth}
-    - Humans show a preference for the output of a Fine-tuned general purpose model over the same model without fine-tuning or a smaller purpose-build model \cite{ai_human_taking_turns_creating_story}
-  - automating the simplification of existing stories to a lexical and grammatical level suitable for the student
-    - evidence that students acquire vocabulary in a fluid, but generally predictable progression
-    - evidence that LLMs one-shot task performance performs relatively well at this task
-      - and evidence that context windows have become long enough to provide the full history of "known unknown" words
-        - ie words that the student has self-identified as not being in long-term memory by virtue of looking up in a dictionary
-        - despite evidence that LLMs have degraded retrieval of information provided in the middle of a context window, input tokens are sufficiently cheap and input window sufficiently large to provide details of several aspects of their vocabulary acquisition \cite{liu2023lost}
-    - as already discussed, beginning with texts simplified to use the 2500 most common words in the target language strikes balance between comprehensibility and nuance \cite{nation1992vocabulary}.
-  - use adaptive learning to adapt the story to the learning needs of the student 
-    - adaptive learning models student's performance on past ecercises to create new exercises (or in this case, text) at an "appropriate estimated level of difficulty for that particular student." \cite{important_adaptive_learning_exercise_generation}
-    - track exposures of new words 
-      - difficult to do perfectly since student has to actively self-identify which words they don't know in the passive activity of reading
-        - and limited research
-        - but possible through tracking which words a student looked up in a dictionary
-          - which emphasizes the importance of an integrated dictionary
-    - present "known unknown" words at a cadence that aligns with spaced repetition
-      - Ebbinghaus' forgetting curve has been replicated several times in modern research settings \cite{Murre2015ReplicationAA}
-    - track exposure of new grammar
-      - under- explored, unclear how to surface grammatical challenges
-    - mimic the overall arc and tone of existing stories, ie controllable story generation \cite{controllable_story_generation}
-  - Raises question of how to linking the stochastic output from an LLM into a traditional software system (SRS)
-    - poses unique software design challenges but is possible \cite{taiwan_adaptive_testing}
-    - alternatively can use deep knowledge tracing \cite{deep_knowledge_tracing} that generates content based on a model of that student's knowledge
-      - although few knowledge-tracing models exist of the shelf, requiring the added complexity of deep learning to implement \cite{question_generation_adaptive_education, generative_information_retrieval}
-        - and evidence that such a system improves upon FSRS is limited \cite{flashcard_scheduler_evolution}
-        - and having the entire system rely on deep learning makes it difficult to interpret, making it harder to be used by a teacher \cite{deep_learning_knowledge_tracing}
-        - and knowledge tracing models are most effective when trained for a specific domain \cite{dkt_knowledge_tracing}
-      - knowledge tracing can be paired with a model of students' interests to strike a balance between what they need to practice and what they want to practice, although this its non-trivial to implement such a system \cite{llm_augmented_exercise_retrieval}
-  - establish an evaluation framework to model both the general and learner likelihood of comprehending the text (sources)
-    - mention best current evals (sari), \cite{xu-etal-2016-optimizing}, (less used) SAMSA \cite{sulem-etal-2018-semantic}, BLEU, ROUGE, human, BLESS (more recent) \cite{kew2023bless}
-      - pick only those that are used for LLM evals in future papers
-      - eval framework particulary important since humans continue to outperform LLMs at sentencen simplification by a significant margin\cite{kew2023bless}
-  - Use LLM to generate audio transcripts alongside the text it generates \cite{Chang2015ImprovingRR}
-  - Tailwind effect of using LLM is that a dynamic text generation makes it easier to extend a graded reading system to 5000 words.
-    - analysis of performance also makes it possible (though not necessarily requiring an LLM) to estimate the number of most common words the student knows.
-  - limitations
-    - non-deteriminstic nature of LLM output. How to address expletives, plagiarism, or nonsense statements if they arise? \cite{recent_story_generation_review}
 
+With the need for leveled readers and some of their best practices established, how might a Large Language Model (LLM) be leveraged to create a high-quality leveled reading experience? Before diving into this question, it's worth pointing out that LLMs have been shown to outperform neural networks, machine learning frameworks, and other rules-based approaches at text simplification, making them the ideal tool to consider \pcite{feng2023sentence}. This begs the important–if uninteresting–question of which LLM exhibits the best performance at adjacent tasks. During a recent evaluation, Open AI's models received the highest scores across several benchmarks \pcite{kew2023bless} with GPT-4 standing out in particular \pcite{wu2024indepth} even when compared to models purpose-built for the task of sentence simplification \pcite{ai_human_taking_turns_creating_story}.
+
+With the ideal LLM identified, how can it be leveraged for this task? While this question is innately subjective, recent research suggests that an LLM can, by dynamically generating the subsequent portions of a leveled reader in real-time, customize each passage to align with each student's current state of vocabulary acquisition. Where a traditional leveled reader has no capacity to adjust its text based on the amount of time between reading sessions, or which words the individual student finds difficult, an LLM can form the bedrock of such a system.
+
+Adaptive Learning and Intelligent Tutoring Systems (ITS) have become incredibly sophisticated since their inception in the 1970s. Adaptive learning systems model a student's performance on past exercises to create new exercises (or in this case, text) at an "appropriate estimated level of difficulty for that particular student\footnote{in-text quotations denote attribution of my own writing from a previous assignment.}" \cite{important_adaptive_learning_exercise_generation}.
+
+This begs the question: how does a passive activity such as free reading generate the data necessary to create a model of a student's knowledge and/or performance? One option is to use dictionary lookup events as a proxy for a student's failure to understand that word or grammatical structure. To ground that in an example, if a student clicks on a word to present the tool-tip containing its definition, the ITS can add that word to the list of vocabulary that needs to be presented consistently throughout subsequent passages in the leveled reader. To complete this example, imagine the LLM is prompted to produce one hundred words of the leveled reader at a time, establishing continuity with the existing story, written at a level that facilitates ninety-eight percent vocabulary recognition for the reader, and presenting the words in a proverbial flashcard deck that are most in need of review. This suggestion is based on the finding that LLMs perform well on tasks that require maintaining continuity in stories that they produce across several prompts \pcite{controllable_story_generation}. The prompt to the LLM might resemble:
+
+\blockquote{Examine the last one thousand words of text you have produced for this story. Please generate the next one hundred words of that story, emphasizing continuity and written at a level of complexity that is in line with the last one thousand words. This passage must contain the words in this list: [\textit{list of words that are due for review according to spaced repetition scheduler}]. If the preceding list was empty, you may slightly increase the complexity of this subsequent passage compared to the last one thousand words. If you have not generated any words of text for this story, provide an introduction for one of Aesop's Fables, written in very simple language that should be understood by a student learning English as a foreign language who only knows the 2,500 thousand most common words.}
+
+Despite evidence that LLMs have degraded retrieval of information provided in the middle of a context window, input tokens are sufficiently cheap and input windows sufficiently large to provide not only the last thousand words of the story as input, but also the instructions above \pcite{liu2023lost}. As already mentioned, beginning with texts simplified to use the 2500 most common words in the target language strikes balance between comprehensibility and nuance \pcite{nation1992vocabulary}. This proposal is grounded in recent precedents that establish similar links between the stochastic output from an LLM and a traditional rules-based system such as spaced repetition. The Taiwanese government recently deployed a similar ITS across its public school system \pcite{taiwan_adaptive_testing}. Although safeguards still need to considered to prevent the LLM, like any stochastic system, from producing expletives, plagiarism, or other problematic output, if however infrequent \pcite{recent_story_generation_review}.
+ 
+Another possibility is to use deep learning to model student knowledge rather that a flashcard deck. However, this approach, often referred to as Deep Knowledge Tracing \cite{deep_knowledge_tracing}, has meaningful drawbacks, the most obvious being the challenge of implementing them \pcite{question_generation_adaptive_education, generative_information_retrieval} and the need to customize them for a specific domain \pcite{dkt_knowledge_tracing}. In addition, there is limited evidence that such a model provides meaningful improvement over a state-of-the-art (SOTA) spaced-repetition system \pcite{flashcard_scheduler_evolution}, and such a system is harder to interpret, making it harder to be used by teachers \pcite{deep_learning_knowledge_tracing}.
+
+One advantage of Deep Knowledge Tracing is that it provides an ITS a way to model and balance what a student \textit{needs} to learn against what they \textit{want} to learn \pcite{llm_augmented_exercise_retrieval}. In the context of leveled reader generation, this could empower the student to solicit the plot to move in certain directions, adding a motivating element of interactivity. However, it's likely that this is achievable by modifying the prompt engineering of the LLM without introducing deep knowledge tracing.
+
+In order to iterate and improve upon such an "ITS for leveled readers," it will be essential to establish an evaluation framework for the system's output. Some of the most popular frameworks for evaluating text simplification, besides human scoring, are SARI \pcite{xu-etal-2016-optimizing}, SAMSA \pcite{sulem-etal-2018-semantic}, BLEU, and BLESS \pcite{kew2023bless}.\footnote{Fully spelled out, those initialisms are as follows: System output Against References and against the Input sentence, Semantic Structural Analysis, Bilingual Evaluation Understudy, Benchmark for Lexical Substitution Semantics} Adopting one or several such evaluation frameworks are particularly important because of the fact that humans continue to outperform LLMs at sentence simplification by a significant margin. Without the objective validation of these frameworks, it will be difficult to prove that an LLM can be induced to create Leveled Readers at a high enough caliber to serve as useful curricula.
 
 \printbibliography{}
 
