@@ -4,6 +4,7 @@
 ]{jdf}
 
 \addbibresource{references.bib}
+\newcommand{\pcite}[1]{(\cite{#1})}
 
 \author{William Luna}
 \email{wluna6@gatech.edu}
@@ -44,9 +45,17 @@ This hypothesis is the bedrock of my project proposal. That a hybrid approach wo
 
 Much work has already been done on both flashcard optimization and extensive reading as \textit{independent} research pursuits.
 
-While flashcards have potentially been in use for thousands of years, many agree that the science of how to optimize their use began with Ebbinghaus' work on the Forgetting Curve in the 1880s. His observation, that information sticks in the human mind longer with each subsequent recall, has been replicated in multiple modern laboratory settings \cite{Murre2015ReplicationAA}. This finding became the bedrock of the SuperMemo method, an rule set that optimizes time spent studying flashcards by presenting harder to remember information to the student more often (and vice versa), and increasing the intervals between studying the same card each time a student correctly recalls it \cite{SuperMemo_Method_2023}. Supermemo remained the de-facto operating system of most flashcard software until 2022, when a Deep Learning model of student memory known as FSRS (Free Spaced Repetition Scheduler) was proposed \cite{shortestpathrepetitionscheduling}. It is currently the default scheduler powering Anki, the world's most popular Flashcard software.
+While flashcards have potentially been in use for thousands of years, many agree that the science of how to optimize their use began with Ebbinghaus' work on the Forgetting Curve in the 1880s. His observation, that information sticks in the human mind longer with each subsequent recall, has been replicated in multiple modern laboratory settings \pcite{Murre2015ReplicationAA}. This finding became the bedrock of the SuperMemo method, an rule set that optimizes time spent studying flashcards by presenting harder to remember information to the student more often (and vice versa), and increasing the intervals between studying the same card each time a student correctly recalls it \pcite{SuperMemo_Method_2023}. Supermemo remained the de-facto operating system of most flashcard software until 2022, when a Deep Learning model of student memory known as FSRS (Free Spaced Repetition Scheduler) was proposed \pcite{shortestpathrepetitionscheduling}. It is currently the default scheduler powering Anki, the world's most popular Flashcard software.
 
-Extensive reading pedagogy also continues to benefit from academic research.
+Extensive reading pedagogy also continues to benefit from recent research. Empirical studies exploring Krashen's theory of Massive Comprehensible Input \pcite{krashen1982principles} that readers need to recognize ninety-eight percent of the words in a text to infer the meaning of the unknown words from context \pcite{hu_2000}, and that students benefit from easy access to a dictionary in the cases where they can't \pcite{mcdonald2016}. 
+
+But what work has been done at the \textit{intersection} of flashcard scheduling and extensive reading? Deep Learning has enabled Deep Knowledge Tracing, which models student performance with a neural network \pcite{deep_knowledge_tracing}. This underlying technology has given rise to Intelligent Tutoring Systems (ITS) that dynamically generate exercises tailored to each student based on their historical study patterns and performance. These systems are rapidly maturing, having been commercialized by Pearson and deployed across the Taiwanese Public School System \cite{taiwan_adaptive_testing}.
+
+And ever since Meehan's TALE-SPIN dissertation, the field of computer-driven story generation has continued to evolve \cite{controllable_story_generation}.
+More recently, LLMs have been leveraged to dynamically evolve the text in a story based on reader input \cite{ai_human_taking_turns_creating_story}, especially to keep students engaged in the reading process \cite{ye2023storypark}. One paper concluded that LLMs perform admirably at establishing continuity in a story, even across several prompt-generation turns \cite{controllable_story_generation}.
+
+However, while extensive work has been done on generating study materials based on models of user learning, as well as dynamically generating fiction based on reader input, there is known research combines the two–continuously generating text in a story based on a model of, and to facilitate the acquisition of, the reader's understanding of language. Regardless of whether a (comparatively) rudimentary system, such as a flashcard scheduler, or a deep knowledge tracing model, is used.
+
 
 \section{Proposed Work}
 % This is the crux of the proposal. What are you going to do? Your description of your proposed work should be detailed enough that you could hand this proposal to someone else and they may be able to implement it themselves. We would expect every proposal to have subsections to the proposed work, but what those subsections are will differ based on your project.
