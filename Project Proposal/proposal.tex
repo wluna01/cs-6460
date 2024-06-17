@@ -78,28 +78,38 @@ To help ground this in an example, consider one prompt that might be used to gen
 With such a prompt in mind, it's easier to conceive of the backend requirements to keep track of all the moving parts that would facilitate the retrieval of each variable:
 
 \begin{enumerate}
-    \item 
+    \item A table where each entry holds a fifty-(ish) word segment of a Brother's Grimm Fairy Tale, ordered.
+    \item Some UI element that allows the reader to select which words are unknown to them in the text.
+    \item A table where each entry holds one of these unknown words and the last time it was presented in the text.
+    \item A table of all words that the reader implicitly knows by virtue of being presented in the text and not selected as unknown.
 \end{enumerate}
 
-It's important to note that a flashcard scheduler is not the most sophisticated mechanism for modeling a student's vocabulary. A more technically impressive version of this project would use deep knowledge tracing \cite{deep_knowledge_tracing} to store a more nuanced model of student knowledge. Unfortunately, feeding a deep knowledge tracing model, which is usually stored as vector embeddings, into an LLM's context window, is not straightforward. Therefore, a flashcard scheduler will be used to reduce the complexity of and establish reasonable scope for the project.
+These core requirements assume that the flashcard scheduler is a simple "first in, first out" model where the least recently unknown word is the one selected to be shown in the subsequent passage. While the goal of this project is to leverage FSRS (see above), a minimum viable product (MVP) does not require it.
 
+It's important to note that even FSRS is not the most sophisticated mechanism for modeling a student's vocabulary. A more technically impressive version of this project would use deep knowledge tracing \cite{deep_knowledge_tracing} to store a more nuanced model of student knowledge. Unfortunately, feeding a deep knowledge tracing model, which is usually stored as vector embeddings, into an LLM's context window, is not straightforward. Therefore, a flashcard scheduler will be used to reduce the complexity of and establish reasonable scope for the project.
+
+Regardless, these requirements make it clear that the bulk of the project entails provisioning an LLM to modify story output and a database to read and write to several tables that store the necessary reader data to feed into the LLM.
+
+In terms of choosing a framework, priority will be given to those that enable rapid and iterative development, even if at the cost of scalability, performance, and/or appearance. With this in mind, a likely candidate is \href{https://streamlit.io/}{streamlit}, a python-only web application library that makes many UI primitives easily available without advanced knowledge of HTML, CSS, or Javascript. \href{https://www.snowflake.com/en/data-cloud/overview/streamlit-in-snowflake/}{Streamlit's native integration} with cloud data warehouse \href{https://www.snowflake.com/en/}{Snowflake} should dramatically reduce the overhead of handling CORS issues and database management. Snowflake also \href{https://docs.snowflake.com/en/guides-overview-ai-features}{exposes LLM functions in SQL}, potentially eliminating the need to provision a dedicated OpenAI API key.
+
+While the tech stack above prioritizes speed, it has the major drawback of being difficult to scale due to cost. The cost of querying Snowflake tables, running container services, and invoking LLMs all cost a few pennies each, which is not a problem for a prototype but cost-prohibitive to introduce to a large non-paying audience. If the project is successful enough to merit hosting for public use, the tech stack will likely need to be migrated to Flask or React.
  
-There are several quality of life improvements that will be made in the later half of the project's development. Assessing different LLMs' output, adding a dictionary to the user interface, and generating audio transcriptions of the text will be done to improve the user experience.  
-
-
+In addition, there are several quality of life improvements that will be made in the later half of the project's development. Assessing different LLMs' output, adding a dictionary to the user interface, and generating audio transcriptions of the text will be done to improve the user experience. While not part of the task list, it may become apparent that readers struggle waiting for the LLM to gradually adjust to their reading level over several turns. If this is the case, some of these quality of life improvements may be skipped in favor of adding a "simplify" button to the UI, prompting the LLM to immediately rewrite the most recent passage.
 
 \section{Deliverables}
 %As part of the project, you will produce two intermediate milestones, as well as the final project. Describe what these deliverables will be. Take a look at the course calendar to see when the intermediate deliverables are expected.
 %Second, describe what you expect to be in your final project deliverable. This could be code, data, artifacts, courseware, videos, etc.
 \subsection{Intermediate Deliverable 1}
-My goal after two weeks of development is to showcase an MVP of the LLM-enable, custom extensive reading application. 
-
-Note that in the task list, tasks of the UI category are almost entirely absent in the first two weeks. This is intentional, to front-load the wiring of the LLM-enabled story generation with the spaced repetition vocabulary tracker. 
+My goal after two weeks of development is to showcase an MVP of the LLM-enable, custom extensive reading application. Note that in the task list, tasks of the UI category are almost entirely absent in the first two weeks. This is intentional, to front-load the wiring of the LLM-enabled story generation with the spaced repetition vocabulary tracker. This demo version of the project will also create open-ended stories without referencing existing fairy tales, to reduce complexity.
 
 \subsection{Intermediate Deliverable 2}
-After a month of development
+After a month of development, I expect to have a refined demo that clearly expresses the value proposition of the project. The \href{https://www.techtarget.com/searchenterpriseai/definition/lemmatization#:~:text=The%20goal%20of%20lemmatization%20is,and%20contextual%20analysis%20of%20words.}{lemmatization} of words in the flashcard scheduler is a good example of a small but necessary cleanup of the overall system that I expect to make this week. It's also possible that implementing FSRS will bleed into this week if \href{https://pypi.org/project/fsrs/}{the vanilla Python implementation} is insufficient. 
+
+The other focus of this milestone will be refining the app's UI. Adding a tooltip dictionary that a reader can access on-hover (similar to \href{https://chromewebstore.google.com/detail/hover-lookup/ogjdcbnhgjgabidifpnpiidgbkhlpnof?pli=1}{this Chrome extension}), with the ability to mark a word as unknown by clicking on it, should facilitate a much smoother reading experience.
 
 \subsection{Final Deliverable}
+
+
 
 \section{Task List}
 
