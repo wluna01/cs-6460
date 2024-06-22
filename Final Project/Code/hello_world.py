@@ -10,12 +10,12 @@ import os
 
 load_dotenv()
 
+# Get the current credentials
 snowflake_user = os.getenv('SNOWFLAKE_USER')
 snowflake_password = os.getenv('SNOWFLAKE_PASSWORD')
 snowflake_account = os.getenv('SNOWFLAKE_ACCOUNT')
 
-# Get the current credentials
-#session = get_active_session()
+# Establish the connection
 conn = snowflake.connector.connect(
     user=snowflake_user,
     password=snowflake_password,
@@ -25,10 +25,17 @@ conn = snowflake.connector.connect(
 # Write directly to the app
 st.title("La Tortuga Gigante")
 
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM educational_technology.stories.la_tortuga_gigante LIMIT 10")
-result = cursor.fetchall()
-cursor.close()
-conn.close()
-for row in result:
-    st.text(row)
+def get_data(query):
+    cursor = conn.cursor()
+    cursor.execute(query)
+    result = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return result
+
+story_portions = get_data("SELECT * FROM educational_technology.stories.la_tortuga_gigante LIMIT 10")
+
+num_segments_shown = 1
+#for portion in story_portions:
+st.write(story_portions[0][0])
+st.write(story_portions[0][1])
