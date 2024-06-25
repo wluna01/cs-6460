@@ -3,11 +3,10 @@ import pandas as pd
 #from snowflake.snowpark.context import get_active_session
 import snowflake.connector
 from datetime import datetime, timedelta
-import nltk
-from nltk.tokenize import word_tokenize
-from dotenv import load_dotenv
+#import nltk
+#from nltk.tokenize import word_tokenize
 import os
-
+from dotenv import load_dotenv
 load_dotenv()
 
 if 'SNOWFLAKE_USER' in os.environ:

@@ -1,5 +1,6 @@
 streamlit
 pandas
 snowflake-connector-python
-nltk
+#snowflake.connector
+#nltk
 python-dotenv
