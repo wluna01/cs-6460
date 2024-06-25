@@ -1,4 +1,6 @@
 import streamlit as st
+st.write("Hello, world!")
+'''
 import pandas as pd
 #from snowflake.snowpark.context import get_active_session
 import snowflake.connector
@@ -43,3 +45,4 @@ num_segments_shown = 1
 #for portion in story_portions:
 st.write(story_portions[0][0])
 st.write(story_portions[0][1])
+'''
