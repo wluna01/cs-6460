@@ -10,10 +10,15 @@ import os
 
 load_dotenv()
 
-# Get the current credentials
-snowflake_user = os.getenv('SNOWFLAKE_USER')
-snowflake_password = os.getenv('SNOWFLAKE_PASSWORD')
-snowflake_account = os.getenv('SNOWFLAKE_ACCOUNT')
+if 'SNOWFLAKE_USER' in os.environ:
+    snowflake_user = os.getenv('SNOWFLAKE_USER')
+    snowflake_password = os.getenv('SNOWFLAKE_PASSWORD')
+    snowflake_account = os.getenv('SNOWFLAKE_ACCOUNT')
+else:
+    # Fallback to Streamlit secrets in production
+    snowflake_user = st.secrets["SNOWFLAKE_USER"]
+    snowflake_password = st.secrets["SNOWFLAKE_PASSWORD"]
+    snowflake_account = st.secrets["SNOWFLAKE_ACCOUNT"]
 
 # Establish the connection
 conn = snowflake.connector.connect(
